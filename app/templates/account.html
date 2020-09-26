@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+
+{% block body %}
+<div class="container mx-auto">
+  <h1 class="display-4"> Min side for {{ current_user.username }} </h1>
+  <div class="col-6">
+      <ul class="list-group">
+        <p class="list-group-item">Brukernavn: {{current_user.username}}</p>
+        <p class="list-group-item">Epost: {{current_user.useremail}}</p>
+        <p class="list-group-item">Addresse: {{current_user.useraddr}}</p>
+        <p class="list-group-item">Telefonnummer: {{current_user.usertlf}}</p>
+      </ul class="list-group">
+      <small>
+        <a href="{{url_for('editprofile')}}" class="btn btn-primary"> Rediger</a>
+      </small>
+    </div>
+  </div>
+{% endblock %}

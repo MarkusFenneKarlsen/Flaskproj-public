@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+
+{% block body %}
+<!-- TODO lag input/registerings forms for å endre bruker innhold -->
+<div class="container mx-auto">
+  <h1 class="display-4"> Kontoer for {{ current_user.username }} </h1>
+  <table>
+    <th>Kontonavn</th>
+    <th>Balanse</th>
+    {%for acc in current_user.accounts if current_user.accounts%}
+      <tr>
+        <td>{{ acc.accname}}</td>
+        <td>{{ acc.balance }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    <small> Har du en annen brukerkonto? <a href="{{url_for('index')}}"> Legg den til her</a> </small>
+
+  </div>
+{% endblock %}

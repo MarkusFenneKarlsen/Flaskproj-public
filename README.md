@@ -15,6 +15,9 @@ phonenumbers
 For å tømme database:
 
 Åpne terminal:
+
 >>> from app import db
+
 >>> db.drop_all()
+
 >>> db.create_all()
